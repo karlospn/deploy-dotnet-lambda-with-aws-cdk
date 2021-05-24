@@ -23,7 +23,7 @@ namespace NetCore31BundlingZipFileLambdaCdk
 
 
             Function function = new Function(this,
-                "zip--lambda-function",
+                "zip-lambda-function",
                 new FunctionProps
             {
                 Runtime = Runtime.DOTNET_CORE_3_1,
