@@ -12,7 +12,7 @@ namespace Net7BundlingContainerLambdaCdk
         {
             DockerImageCode dockerImageCode = DockerImageCode.FromImageAsset("../My.Net7.Lambda");
 
-            _  = new DockerImageFunction(this, 
+            _ = new DockerImageFunction(this, 
                 "container-image-lambda-function",
                 new DockerImageFunctionProps()
             {

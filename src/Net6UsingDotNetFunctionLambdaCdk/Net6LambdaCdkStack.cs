@@ -1,8 +1,8 @@
 using Amazon.CDK;
-using Amazon.CDK.AWS.Lambda;
 using Constructs;
+using XaasKit.CDK.AWS.Lambda.DotNet;
 
-namespace Net6ExistingZipFileLambdaCdk
+namespace Net6UsingDotNetFunctionLambdaCdk
 {
     public class Net6LambdaCdkStack : Stack
     {
@@ -10,13 +10,11 @@ namespace Net6ExistingZipFileLambdaCdk
             string id,
             IStackProps props = null) : base(scope, id, props)
         {
-
-            Function function = new Function(this,
-                "zip-lambda-function",
-                new FunctionProps
+            _ = new DotNetFunction(this, 
+                "my-net6-function", 
+                new DotNetFunctionProps
             {
-                Runtime = Runtime.DOTNET_6,
-                Code = Code.FromAsset("./src/My.Net6.Lambda.zip"),
+                ProjectDir = "../My.Net6.Lambda",
                 Handler = "My.Net6.Lambda::My.Net6.Lambda.Function::FunctionHandler"
             });
         }
