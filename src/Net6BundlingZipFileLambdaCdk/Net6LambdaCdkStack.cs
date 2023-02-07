@@ -1,19 +1,21 @@
 using System.Collections.Generic;
 using Amazon.CDK;
 using Amazon.CDK.AWS.Lambda;
+using Constructs;
 using AssetOptions = Amazon.CDK.AWS.S3.Assets.AssetOptions;
 
-namespace NetCore31BundlingZipFileLambdaCdk
+namespace Net6BundlingZipFileLambdaCdk
 {
-    public class NetCore31LambdaCdkStack : Stack
+    public class Net6LambdaCdkStack : Stack
     {
-        internal NetCore31LambdaCdkStack(Construct scope, 
+        internal Net6LambdaCdkStack(Construct scope, 
             string id,
             IStackProps props = null) : base(scope, id, props)
         {
-            IEnumerable<string?> commands = new[]
+            IEnumerable<string> commands = new[]
             {
                 "cd /asset-input",
+                "export XDG_DATA_HOME=\"/tmp/DOTNET_CLI_HOME\"",
                 "export DOTNET_CLI_HOME=\"/tmp/DOTNET_CLI_HOME\"",
                 "export PATH=\"$PATH:/tmp/DOTNET_CLI_HOME/.dotnet/tools\"",
                 "dotnet tool install -g Amazon.Lambda.Tools",
@@ -22,23 +24,23 @@ namespace NetCore31BundlingZipFileLambdaCdk
             };
 
 
-            Function function = new Function(this,
+            _ = new Function(this,
                 "zip-lambda-function",
                 new FunctionProps
             {
-                Runtime = Runtime.DOTNET_CORE_3_1,
-                Code = Code.FromAsset("../My.NetCore31.Lambda", new AssetOptions
+                Runtime = Runtime.DOTNET_6,
+                Code = Code.FromAsset("../My.Net6.Lambda", new AssetOptions
                 {
                     Bundling = new BundlingOptions
                     {
-                      Image  = Runtime.DOTNET_CORE_3_1.BundlingImage,
+                      Image  = Runtime.DOTNET_6.BundlingImage,
                       Command = new []
                       {
                           "bash", "-c", string.Join(" && ", commands)
                       }
                     }
                 }),
-                Handler = "My.NetCore31.Lambda::My.NetCore31.Lambda.Function::FunctionHandler"
+                Handler = "My.Net6.Lambda::My.Net6.Lambda.Function::FunctionHandler"
 
             });
         }

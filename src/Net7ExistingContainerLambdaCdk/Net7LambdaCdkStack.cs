@@ -1,28 +1,29 @@
 using Amazon.CDK;
 using Amazon.CDK.AWS.ECR;
 using Amazon.CDK.AWS.Lambda;
+using Constructs;
 
-namespace Net5ExistingContainerLambdaCdk
+namespace Net7ExistingContainerLambdaCdk
 {
-    public class Net5LambdaCdkStack : Stack
+    public class Net7LambdaCdkStack : Stack
     {
-        internal Net5LambdaCdkStack(Construct scope, 
+        internal Net7LambdaCdkStack(Construct scope, 
             string id,
             IStackProps props = null) : base(scope, id, props)
         {
 
             var ecrRepo = Repository.FromRepositoryName(this, 
                 "ecr-image-repository", 
-                "net5.container.lambda");
+                "net7.container.lambda");
 
             DockerImageCode dockerImageCode = DockerImageCode.FromEcr(ecrRepo);
             
-            DockerImageFunction dockerImageFunction = new DockerImageFunction(this, 
+            _ = new DockerImageFunction(this, 
                 "container-image-lambda-function", 
                 new DockerImageFunctionProps()
             {
                 Code = dockerImageCode,
-                Description = ".NET 5 Docker Lambda function"
+                Description = ".NET 7 Docker Lambda function"
             });
         }
     }

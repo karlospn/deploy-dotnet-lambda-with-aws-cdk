@@ -1,6 +1,6 @@
 ﻿using Amazon.CDK;
 
-namespace NetCore31ExistingZipFileLambdaCdk
+namespace Net7BundlingContainerLambdaCdk
 {
     sealed class Program
     {
@@ -8,7 +8,7 @@ namespace NetCore31ExistingZipFileLambdaCdk
         {
             var app = new App();
 
-            new NetCore31LambdaCdkStack(app, "NetCore31ExistingZipFileLambdaCdk", new StackProps
+            new Net7LambdaCdkStack(app, "Net7BundlingContainerLambdaCdk", new StackProps
             {
                 Env = new Amazon.CDK.Environment
                 {

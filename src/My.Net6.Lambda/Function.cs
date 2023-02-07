@@ -3,10 +3,11 @@ using Amazon.Lambda.Core;
 // Assembly attribute to enable the Lambda function's JSON input to be converted into a .NET class.
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace My.Net5.Lambda
+namespace My.Net6.Lambda
 {
     public class Function
     {
+
         /// <summary>
         /// A simple function that takes a string and does a ToUpper
         /// </summary>
@@ -15,7 +16,7 @@ namespace My.Net5.Lambda
         /// <returns></returns>
         public string FunctionHandler(string input, ILambdaContext context)
         {
-            return input?.ToUpper();
+            return input.ToUpper();
         }
     }
 }

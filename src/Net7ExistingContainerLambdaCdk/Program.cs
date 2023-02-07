@@ -1,6 +1,6 @@
 ﻿using Amazon.CDK;
 
-namespace Net5ExistingContainerLambdaCdk
+namespace Net7ExistingContainerLambdaCdk
 {
     sealed class Program
     {
@@ -8,7 +8,7 @@ namespace Net5ExistingContainerLambdaCdk
         {
             var app = new App();
 
-            new Net5LambdaCdkStack(app, "Net5ExistingContainerLambdaCdkStack", new StackProps
+            new Net7LambdaCdkStack(app, "Net7ExistingContainerLambdaCdkStack", new StackProps
             {
                 Env = new Amazon.CDK.Environment
                 {
