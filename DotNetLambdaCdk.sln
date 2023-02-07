@@ -15,6 +15,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My.Net6.Lambda", "src\My.Ne
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "My.Net7.Lambda", "src\My.Net7.Lambda\My.Net7.Lambda.csproj", "{E2A52FF6-F1A5-48FF-8C6B-5B66E3BD4576}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6UsingDotNetFunctionLambdaCdk", "src\Net6UsingDotNetFunctionLambdaCdk\Net6UsingDotNetFunctionLambdaCdk.csproj", "{B354DC00-54A5-4163-8D72-809E57933B3F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -97,6 +99,18 @@ Global
 		{E2A52FF6-F1A5-48FF-8C6B-5B66E3BD4576}.Release|x64.Build.0 = Release|Any CPU
 		{E2A52FF6-F1A5-48FF-8C6B-5B66E3BD4576}.Release|x86.ActiveCfg = Release|Any CPU
 		{E2A52FF6-F1A5-48FF-8C6B-5B66E3BD4576}.Release|x86.Build.0 = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|x64.Build.0 = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Debug|x86.Build.0 = Debug|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|x64.ActiveCfg = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|x64.Build.0 = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|x86.ActiveCfg = Release|Any CPU
+		{B354DC00-54A5-4163-8D72-809E57933B3F}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
