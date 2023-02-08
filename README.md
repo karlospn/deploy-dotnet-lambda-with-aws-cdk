@@ -1,4 +1,4 @@
-# deploy-dotnet-lambda-with-aws-cdk
+# 5 ways to deploy a .NET Lambda using AWS CDK
 
 This git repository contains a few examples about how you can deploy a dotnet lambda when using AWS CDK.
 
